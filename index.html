@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="si" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABHEE ELECTRICAL & CONSTRUCTION | Professional Electrical Solutions</title>
+    <meta name="description" content="Safe, reliable and professional electrical services for homes and businesses in Mirigama & Sri Lanka. House wiring, industrial line construction & labor estimators.">
+    <meta name="keywords" content="Electrical Mirigama, House Wiring Sri Lanka, Electrical Calculators, ABHEE Electrical, LV MV Line Construction">
+
+    <!-- SEO OpenGraph -->
+    <meta property="og:title" content="ABHEE Electrical & Construction">
+    <meta property="og:description" content="Safe, reliable and professional electrical services in Sri Lanka.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0b132b', 800: '#1c2541', 700: '#3a506b' },
+                        electric: '#f7b801',
+                        accent: '#ff5722'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome & jsPDF CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        .gradient-header { background: linear-gradient(135deg, #0b132b 0%, #1c2541 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+
+    <!-- Top Social & Contact Header Bar -->
+    <div class="bg-navy-900 text-white py-2 px-4 text-xs md:text-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <a href="tel:0719757970" class="hover:text-electric flex items-center gap-1"><i class="fas fa-phone text-electric"></i> 071 975 7970</a>
+                <span class="hidden md:inline">|</span>
+                <a href="mailto:abhee.electrical@gmail.com" class="hidden md:flex items-center gap-1 hover:text-electric"><i class="fas fa-envelope text-electric"></i> abhee.electrical@gmail.com</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span>Follow Us:</span>
+                <a href="#" class="hover:text-electric"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-electric"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-electric"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="hover:text-electric"><i class="fab fa-instagram"></i></a>
+                <button onclick="toggleAdminPanel()" class="ml-4 bg-gray-800 hover:bg-electric hover:text-navy-900 px-2 py-0.5 rounded text-xs transition"><i class="fas fa-lock"></i> Admin</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="Logo.png" alt="ABHEE Logo" class="h-12 w-auto object-contain" onerror="this.src='https://via.placeholder.com/150x50?text=ABHEE+LOGO'">
+                <div>
+                    <h1 class="font-bold text-lg md:text-xl text-navy-900 tracking-wide leading-tight">ABHEE ELECTRICAL & CONSTRUCTION</h1>
+                    <p class="text-xs text-amber-600 font-semibold">Safe, Reliable & Professional Electrical Solutions</p>
+                </div>
+            </div>
+            <div class="hidden lg:flex space-x-6 font-medium text-sm text-navy-800">
+                <a href="#home" class="hover:text-electric transition">Home</a>
+                <a href="#about" class="hover:text-electric transition">About</a>
+                <a href="#services" class="hover:text-electric transition">Services</a>
+                <a href="#wizard" class="hover:text-electric transition">Get Quote / Interactive Assistant</a>
+                <a href="#calculators" class="hover:text-electric transition">Knowledge Hub & Calculators</a>
+                <a href="#gallery" class="hover:text-electric transition">Projects</a>
+                <a href="#contact" class="hover:text-electric transition">Contact Us</a>
+            </div>
+            <a href="https://wa.me/94719757970" target="_blank" class="hidden sm:flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2 rounded-lg text-sm transition">
+                <i class="fab fa-whatsapp text-lg"></i> Direct Chat
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-header text-white py-20 px-4 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <span class="bg-electric text-navy-900 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider mb-4 inline-block">Professional Electrical Solutions</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">ඔබගේ නිවසේ සහ ව්‍යාපාරයේ සියලුම විදුලි අවශ්‍යතා විශ්වාසවන්තව එකම තැනකින්!</h2>
+                <p class="text-gray-300 text-base md:text-lg mb-6">Safe, reliable, and professional electrical services for homes and businesses. High standard installations governed by international & SLSI standards.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#wizard" class="bg-electric hover:bg-amber-400 text-navy-900 font-bold px-6 py-3 rounded-lg transition text-center">Interactive Quote Wizard</a>
+                    <a href="#calculators" class="border border-white hover:bg-white hover:text-navy-900 font-bold px-6 py-3 rounded-lg transition text-center">Electrical Calculators</a>
+                </div>
+            </div>
+            <div class="hidden md:block text-center">
+                <div class="inline-block p-4 border-4 border-electric/30 rounded-2xl bg-navy-800/50 backdrop-blur">
+                    <i class="fas fa-bolt text-9xl text-electric animate-pulse"></i>
+                    <p class="mt-4 font-bold text-xl">24/7 Rapid Response & Maintenance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose ABHEE Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-navy-900 mb-8">ABHEE Electrical & Construction තෝරාගත යුත්තේ ඇයි?</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg transition">
+                    <i class="fas fa-user-shield text-3xl text-electric mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">පළපුරුදු සහ සහතිකලත් ශිල්පීන්</h3>
+                    <p class="text-xs text-gray-600">වසර ගණනාවක පළපුරුද්ද ඇති සුදුසුකම් ලත් ඉංජිනේරුවන් සහ කාර්මික ශිල්පීන්ගේ සේවය.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg transition">
+                    <i class="fas fa-certificate text-3xl text-electric mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">ප්‍රමිතියෙන් යුත් අමුද්‍රව්‍ය</h3>
+                    <p class="text-xs text-gray-600">SLSI සහ ජාත්‍යන්තර ප්‍රමිතීන්ට අනුකූල උසස්ම තත්ත්වයේ විදුලි හා ඉදි කිරීම් අමුද්‍රව්‍ය පමණක් භාවිතය.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg transition">
+                    <i class="fas fa-clock text-3xl text-electric mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">නියමිත කාලයට අවසන් කිරීම</h3>
+                    <p class="text-xs text-gray-600">පොරොන්දු වූ කාල රාමුව ඇතුළත ව්‍යාපෘතිය අඛණ්ඩව හා කාර්යක්ෂමව නිම කිරීම.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg transition">
+                    <i class="fas fa-headset text-3xl text-electric mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">24/7 පාරිභෝගික සහාය</h3>
+                    <p class="text-xs text-gray-600">කාර්යය නිම කිරීමෙන් පසුවද ඔබට අවශ්‍ය ඕනෑම තාක්ෂණික සහායක් සහ දීර්ඝ කාලීන වගකීමක්.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Offered -->
+    <section id="services" class="py-12 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-navy-900 mb-8">අප ආයතනයෙන් ලැබෙන සේවාවන් (Our Services)</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-electric">
+                    <i class="fas fa-plug text-2xl text-navy-900 mb-2"></i>
+                    <h3 class="font-bold text-lg">House Wiring / Rewiring</h3>
+                    <p class="text-xs text-gray-600 mt-2">සම්පූර්ණ නිවසේ වයරින් පද්ධති සවිකිරීම සහ පැරණි වයරින් නවීකරණය.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-electric">
+                    <i class="fas fa-building text-2xl text-navy-900 mb-2"></i>
+                    <h3 class="font-bold text-lg">Commercial & Industrial Work</h3>
+                    <p class="text-xs text-gray-600 mt-2">කර්මාන්තශාලා සහ ව්‍යාපාරික ස්ථාන සඳහා 3-Phase වයරින් පද්ධති.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-electric">
+                    <i class="fas fa-solar-panel text-2xl text-navy-900 mb-2"></i>
+                    <h3 class="font-bold text-lg">Solar & Inverter Solutions</h3>
+                    <p class="text-xs text-gray-600 mt-2">සූර්ය බලශක්ති පද්ධති සහ Inverter / Battery backup සවිකිරීම.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-electric">
+                    <i class="fas fa-tower-cell text-2xl text-navy-900 mb-2"></i>
+                    <h3 class="font-bold text-lg">LV & MV Line Construction</h3>
+                    <p class="text-xs text-gray-600 mt-2">LV / MV නව රැහැන් මාර්ග ඉදිකිරීම සහ නඩත්තු කටයුතු (Line Maintenance).</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-electric">
+                    <i class="fas fa-network-wired text-2xl text-navy-900 mb-2"></i>
+                    <h3 class="font-bold text-lg">LV Bundle Cable Installation</h3>
+                    <p class="text-xs text-gray-600 mt-2">LV Bundle Cable නව මාර්ග එලීම සහ නඩත්තුව.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-electric">
+                    <i class="fas fa-lightbulb text-2xl text-navy-900 mb-2"></i>
+                    <h3 class="font-bold text-lg">Lighting & Products Selling</h3>
+                    <p class="text-xs text-gray-600 mt-2">ආලෝකකරණ පද්ධති සැලසුම් කිරීම සහ උසස් ප්‍රමිතියේ විදුලි භාණ්ඩ සැපයීම.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Requirement Wizard & Quotation Generator Section -->
+    <section id="wizard" class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="border-2 border-electric rounded-2xl p-6 md:p-8 bg-gray-50 shadow-md">
+                <h2 class="text-2xl font-bold text-navy-900 mb-2 text-center">ඔබට අවශ්‍ය සේවාව තෝරන්න (Smart Assistant)</h2>
+                <p class="text-xs text-gray-600 text-center mb-6">පහත ප්‍රශ්නවලට පිලිතුරු සපයා නිවැරදි තොරතුරු සහ ක්ෂණික Quotation එකක් ලබාගන්න.</p>
+
+                <!-- Checkbox Question Selector -->
+                <div class="space-y-4 mb-6">
+                    <label class="flex items-center space-x-3 bg-white p-3 rounded-lg border cursor-pointer hover:bg-amber-50">
+                        <input type="checkbox" id="chkCalc" class="w-5 h-5 text-electric rounded" onchange="toggleWizardSection()">
+                        <span class="font-bold text-sm">1. ELECTRICAL Calculator එක භාවිතා කිරීම</span>
+                    </label>
+
+                    <label class="flex items-center space-x-3 bg-white p-3 rounded-lg border cursor-pointer hover:bg-amber-50">
+                        <input type="checkbox" id="chkPointPrice" class="w-5 h-5 text-electric rounded" onchange="toggleWizardSection()">
+                        <span class="font-bold text-sm">2. වයරින් පොයින්ට එකක මිල ගණන් පරීක්ෂා කිරීම</span>
+                    </label>
+
+                    <label class="flex items-center space-x-3 bg-white p-3 rounded-lg border cursor-pointer hover:bg-amber-50">
+                        <input type="checkbox" id="chkItemPrice" class="w-5 h-5 text-electric rounded" onchange="toggleWizardSection()">
+                        <span class="font-bold text-sm">3. වයරින් භාණ්ඩ වල මිල ගණන් පරීක්ෂා කිරීම</span>
+                    </label>
+
+                    <label class="flex items-center space-x-3 bg-white p-3 rounded-lg border cursor-pointer hover:bg-amber-50">
+                        <input type="radio" name="planOpt" id="chkHasPlan" value="yes" class="w-5 h-5 text-electric" onchange="togglePlanOptions()">
+                        <span class="font-bold text-sm">4. ඔබට වයරින් ප්ලෑන් එකක් ඇත (Upload Plan)</span>
+                    </label>
+
+                    <label class="flex items-center space-x-3 bg-white p-3 rounded-lg border cursor-pointer hover:bg-amber-50">
+                        <input type="radio" name="planOpt" id="chkNoPlan" value="no" class="w-5 h-5 text-electric" onchange="togglePlanOptions()">
+                        <span class="font-bold text-sm">5. ඔබට වයරින් ප්ලෑන් එකක් නැත</span>
+                    </label>
+                </div>
+
+                <!-- Sub Options for Plan Exists -->
+                <div id="sectionHasPlan" class="hidden p-4 bg-blue-50 border border-blue-200 rounded-lg mb-6">
+                    <h4 class="font-bold text-navy-900 text-sm mb-2">ඔබගේ Wiring Plan එක (PDF / JPEG) Upload කරන්න:</h4>
+                    <input type="file" id="fileWiringPlan" accept="image/jpeg,application/pdf" class="block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-navy-900 file:text-white hover:file:bg-navy-800 mb-3">
+                    <label class="block text-xs font-bold mb-1">ඔබගේ WhatsApp අංකය:</label>
+                    <input type="text" id="planWhatsapp" placeholder="07X XXX XXXX" class="w-full p-2 text-xs border rounded">
+                    <button onclick="submitPlanUpload()" class="mt-3 bg-navy-900 text-white font-bold px-4 py-2 rounded text-xs">Plan එක Upload කරන්න</button>
+                </div>
+
+                <!-- Sub Options for No Plan -->
+                <div id="sectionNoPlan" class="hidden p-4 bg-amber-50 border border-amber-200 rounded-lg mb-6">
+                    <h4 class="font-bold text-navy-900 text-sm mb-3">ප්ලෑන් එකක් නොමැති බැවින් පහතින් අවශ්‍යතාවය තෝරන්න:</h4>
+                    <div class="space-y-3">
+                        <label class="flex items-start space-x-2">
+                            <input type="radio" name="subPlanOpt" id="subDrawPlan" class="mt-1" onchange="toggleSubPlanDetails()">
+                            <span class="text-xs font-semibold">ඔබට වයරින් ප්ලෑන් එකක් ඇඳ ගැනීමට අවශ්‍යයි</span>
+                        </label>
+                        <div id="drawPlanBox" class="hidden pl-6 py-2">
+                            <p class="text-xs text-red-600 font-bold bg-yellow-100 p-2 rounded mb-2">
+                                වයරින් ප්ලෑන් එකක් ඇඳ ගැනීමට රු. 2000ක මුදලක් ගෙවීමට සිදුවේ. 
+                                <span class="bg-yellow-300 px-1">(අප ආයතනය විසින් ඔබගේ වයරින් එක නිමා කිරීමෙන් පසු එම රු. 2000ක මුදල අදාල කාර්යයේ මුළු මුදලෙන් අඩුවෙනු ඇත!)</span>
+                            </p>
+                            <div class="bg-white p-3 rounded border text-xs text-gray-700 space-y-1">
+                                <p><strong>බැංකුව:</strong> මහජන බැංකුව (People's Bank)</p>
+                                <p><strong>ශාඛාව:</strong> මීරිගම ශාඛාව</p>
+                                <p><strong>ගිණුම් හිමියා:</strong> ABHEE ELECTRICAL & CONSTRUCTION</p>
+                                <p><strong>ගිණුම් අංකය:</strong> 198100100071285</p>
+                                <p class="text-blue-600 font-bold">Remark: Plan [ඔබගේ දුරකථන අංකය]</p>
+                            </div>
+                            <label class="block text-xs font-bold mt-2">බැංකු ගෙවීම් රිසිට් පත Upload කරන්න:</label>
+                            <input type="file" id="fileReceipt" accept="image/*,application/pdf" class="block w-full text-xs text-gray-500 file:mr-2 file:py-1 file:px-2 file:border-0 file:bg-green-700 file:text-white rounded mb-2">
+                            <button onclick="submitReceiptUpload()" class="bg-green-700 text-white text-xs font-bold px-3 py-1.5 rounded">රිසිට්පත යොමු කරන්න</button>
+                        </div>
+
+                        <label class="flex items-start space-x-2">
+                            <input type="radio" name="subPlanOpt" id="subNoDrawPlan" class="mt-1" onchange="toggleSubPlanDetails()">
+                            <span class="text-xs font-semibold">ඔබට වයරින් ප්ලෑන් එකක් ඇඳ ගැනීමට අවශ්‍ය නැත</span>
+                        </label>
+                        <div id="housePlanBox" class="hidden pl-6 py-2">
+                            <p class="text-xs mb-1">අදාල නිවසේ / ආයතනයේ ගොඩනැගිලි ප්ලෑන් එක තිබේද? තිබේ නම් upload කරන්න:</p>
+                            <input type="file" id="fileHousePlan" class="block w-full text-xs text-gray-500 mb-2">
+                            <input type="text" id="houseWhatsapp" placeholder="ඔබගේ WhatsApp අංකය" class="w-full p-2 text-xs border rounded mb-2">
+                            <button onclick="submitHousePlanUpload()" class="bg-navy-900 text-white text-xs font-bold px-3 py-1.5 rounded">ගොඩනැගිලි ප්ලෑන් එක යොමු කරන්න</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comprehensive Dynamic Electrical Calculator -->
+                <div id="calculatorSection" class="border-t-2 border-gray-200 pt-6">
+                    <h3 class="text-xl font-bold text-navy-900 mb-4 text-center"><i class="fas fa-calculator text-electric"></i> Electrical Labor Calculator</h3>
+                    
+                    <!-- Customer Details Inputs -->
+                    <div class="grid md:grid-cols-3 gap-3 mb-4 bg-amber-50/50 p-3 rounded-lg border border-amber-200">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700">Customer Name</label>
+                            <input type="text" id="custName" placeholder="John Doe" class="w-full p-1.5 text-xs border rounded">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700">Phone / WhatsApp</label>
+                            <input type="text" id="custPhone" placeholder="071XXXXXXX" class="w-full p-1.5 text-xs border rounded">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700">Address / Location</label>
+                            <input type="text" id="custAddr" placeholder="Mirigama" class="w-full p-1.5 text-xs border rounded">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <label class="block font-bold">ලයිට් පොයින්ට් ගණන (රු. <span class="rate-light">1450</span>)</label>
+                            <input type="number" id="numLight" value="0" min="0" class="w-full p-2 border rounded mt-1" oninput="calculateLaborQuote()">
+                        </div>
+                        <div>
+                            <label class="block font-bold">ප්ලග් පොයින්ට් ගණන (රු. <span class="rate-plug">1350</span>)</label>
+                            <input type="number" id="numPlug" value="0" min="0" class="w-full p-2 border rounded mt-1" oninput="calculateLaborQuote()">
+                        </div>
+                        <div>
+                            <label class="block font-bold">2 Way ලයිට් පොයින්ට් ගණන (රු. <span class="rate-twoway">2200</span>)</label>
+                            <input type="number" id="numTwoWay" value="0" min="0" class="w-full p-2 border rounded mt-1" oninput="calculateLaborQuote()">
+                        </div>
+                        <div>
+                            <label class="block font-bold">Master Switch Light System (රු. <span class="rate-master">8000</span>)</label>
+                            <input type="number" id="numMaster" value="0" min="0" class="w-full p-2 border rounded mt-1" oninput="calculateLaborQuote()">
+                        </div>
+                        <div>
+                            <label class="block font-bold">Distribution Board (DB Board Row Type)</label>
+                            <select id="dbRowType" class="w-full p-2 border rounded mt-1" onchange="calculateLaborQuote()">
+                                <option value="0">None</option>
+                                <option value="6500">1 Row - Rs. 6,500 (32A MCB, 40mA RCCB, Volt Protector)</option>
+                                <option value="8500">2 Rows - Rs. 8,500 (32A MCB, 40mA RCCB, Volt Protector)</option>
+                                <option value="11000">3 Rows - Rs. 11,000 (32A MCB, 40mA RCCB, Volt Indicator)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold">ලෝඩ් වයර් මීටර් ගණන (10m දක්වා Rs.500/m, >10m Rs.400/m)</label>
+                            <input type="number" id="lenLoadWire" value="0" min="0" class="w-full p-2 border rounded mt-1" oninput="calculateLaborQuote()">
+                        </div>
+                        <div>
+                            <label class="block font-bold">Earth Fixing ගණන (රු. <span class="rate-earth">1250</span>)</label>
+                            <input type="number" id="numEarth" value="0" min="0" class="w-full p-2 border rounded mt-1" oninput="calculateLaborQuote()">
+                        </div>
+                        <div>
+                            <label class="block font-bold">විදුලි මීටරය තාප්පයට සවි කරන්නේද?</label>
+                            <div class="flex space-x-4 mt-2">
+                                <label><input type="radio" name="wallMeter" value="yes" onchange="calculateLaborQuote()"> ඔව්</label>
+                                <label><input type="radio" name="wallMeter" value="no" value="no" checked onchange="calculateLaborQuote()"> නැත</label>
+                            </div>
+                        </div>
+                        <div id="wallMeterBox" class="hidden md:col-span-2 bg-amber-100 p-3 rounded space-y-2">
+                            <div class="grid md:grid-cols-2 gap-2">
+                                <div>
+                                    <label class="block font-bold">Load Wire (Armored Cable) Length (m) - Rs.950/m</label>
+                                    <input type="number" id="lenArmored" value="0" min="0" class="w-full p-2 border rounded" oninput="calculateLaborQuote()">
+                                </div>
+                                <div>
+                                    <label class="block font-bold">Outdoor MCB Box Count - Rs. 4,500/each</label>
+                                    <input type="number" id="numOutdoorMcb" value="0" min="0" class="w-full p-2 border rounded" oninput="calculateLaborQuote()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-3 bg-red-50 text-red-700 text-xs rounded border border-red-200">
+                        * Note: Wall Cutting / Concrete Chipping සඳහා අමතර ගාස්තු අයවේ.
+                    </div>
+
+                    <!-- Calculated Total Display Box -->
+                    <div class="mt-6 p-4 bg-navy-900 text-white rounded-xl flex flex-wrap justify-between items-center gap-2">
+                        <div>
+                            <span class="text-xs text-gray-300 block">Total Estimated Labor Cost:</span>
+                            <span class="text-2xl font-extrabold text-electric" id="txtTotalCost">Rs. 0.00</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="generatePDFQuotation()" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded flex items-center gap-1">
+                                <i class="fas fa-file-pdf"></i> PDF Quotation
+                            </button>
+                            <button onclick="sendWhatsAppQuotation()" class="bg-green-600 hover:bg-green-700 text-white text-xs font-bold px-4 py-2 rounded flex items-center gap-1">
+                                <i class="fab fa-whatsapp"></i> Send WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electrical Knowledge Hub & Technical Tools Section -->
+    <section id="calculators" class="py-12 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-navy-900 mb-2">Electrical Knowledge Hub & Engineering Tools</h2>
+            <p class="text-xs text-center text-gray-600 mb-8">Engineering formulas and instant technical tools for technicians and homeowners.</p>
+
+            <!-- Tool Tabs Navigation -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
+                <button onclick="switchTechTool('ohms')" class="tech-tab-btn bg-navy-900 text-white py-2 px-3 rounded text-xs font-bold">Ohm's Law</button>
+                <button onclick="switchTechTool('power')" class="tech-tab-btn bg-white text-navy-900 py-2 px-3 rounded text-xs font-bold">Power Calc</button>
+                <button onclick="switchTechTool('vdrop')" class="tech-tab-btn bg-white text-navy-900 py-2 px-3 rounded text-xs font-bold">Voltage Drop</button>
+                <button onclick="switchTechTool('units')" class="tech-tab-btn bg-white text-navy-900 py-2 px-3 rounded text-xs font-bold">kW <-> HP</button>
+            </div>
+
+            <!-- Tab Content Display Area -->
+            <div class="bg-white p-6 rounded-xl shadow border border-gray-200">
+                <!-- Ohm's Law Calculator -->
+                <div id="tool-ohms" class="tech-tool-content">
+                    <h3 class="font-bold text-lg mb-4 text-navy-900">Ohm's Law Calculator (V = I x R)</h3>
+                    <div class="grid md:grid-cols-3 gap-4 text-xs">
+                        <div>
+                            <label class="block font-bold">Voltage (V)</label>
+                            <input type="number" id="ohmV" placeholder="e.g. 230" class="w-full p-2 border rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block font-bold">Current (A)</label>
+                            <input type="number" id="ohmI" placeholder="e.g. 10" class="w-full p-2 border rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block font-bold">Resistance (Ω)</label>
+                            <input type="number" id="ohmR" placeholder="e.g. 23" class="w-full p-2 border rounded mt-1">
+                        </div>
+                    </div>
+                    <button onclick="calcOhm()" class="mt-4 bg-electric font-bold text-navy-900 px-4 py-2 rounded text-xs">Calculate Missing Value</button>
+                    <p id="resOhm" class="mt-3 font-bold text-navy-900 text-sm"></p>
+                </div>
+
+                <!-- Power Calculator -->
+                <div id="tool-power" class="tech-tool-content hidden">
+                    <h3 class="font-bold text-lg mb-4 text-navy-900">Single Phase Power Calculator (P = V x I x PF)</h3>
+                    <div class="grid md:grid-cols-3 gap-4 text-xs">
+                        <div>
+                            <label class="block font-bold">Voltage (V)</label>
+                            <input type="number" id="pwrV" value="230" class="w-full p-2 border rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block font-bold">Current (A)</label>
+                            <input type="number" id="pwrI" placeholder="e.g. 5" class="w-full p-2 border rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block font-bold">Power Factor (PF)</label>
+                            <input type="number" id="pwrPF" value="0.8" step="0.1" class="w-full p-2 border rounded mt-1">
+                        </div>
+                    </div>
+                    <button onclick="calcPower()" class="mt-4 bg-electric font-bold text-navy-900 px-4 py-2 rounded text-xs">Calculate Power (Watts)</button>
+                    <p id="resPower" class="mt-3 font-bold text-navy-900 text-sm"></p>
+                </div>
+
+                <!-- Voltage Drop Calculator -->
+                <div id="tool-vdrop" class="tech-tool-content hidden">
+                    <h3 class="font-bold text-lg mb-4 text-navy-900">Voltage Drop Calculator (Copper Wires)</h3>
+                    <div class="grid md:grid-cols-3 gap-4 text-xs">
+                        <div>
+                            <label class="block font-bold">Cable Length (One way in meters)</label>
+                            <input type="number" id="vdLen" placeholder="e.g. 50" class="w-full p-2 border rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block font-bold">Current (Amps)</label>
+                            <input type="number" id="vdI" placeholder="e.g. 13" class="w-full p-2 border rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block font-bold">Cable Size (mm²)</label>
+                            <select id="vdSize" class="w-full p-2 border rounded mt-1">
+                                <option value="1.5">1.5 mm²</option>
+                                <option value="2.5">2.5 mm²</option>
+                                <option value="4.0">4.0 mm²</option>
+                                <option value="6.0">6.0 mm²</option>
+                                <option value="10.0">10.0 mm²</option>
+                                <option value="16.0">16.0 mm²</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="calcVDrop()" class="mt-4 bg-electric font-bold text-navy-900 px-4 py-2 rounded text-xs">Calculate Voltage Drop</button>
+                    <p id="resVDrop" class="mt-3 font-bold text-navy-900 text-sm"></p>
+                </div>
+
+                <!-- Unit Conversion Calculator -->
+                <div id="tool-units" class="tech-tool-content hidden">
+                    <h3 class="font-bold text-lg mb-4 text-navy-900">kW <-> Horsepower (HP) Converter</h3>
+                    <div class="grid md:grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <label class="block font-bold">Kilowatts (kW)</label>
+                            <input type="number" id="valKW" placeholder="kW" class="w-full p-2 border rounded mt-1" oninput="convKWtoHP()">
+                        </div>
+                        <div>
+                            <label class="block font-bold">Horsepower (HP)</label>
+                            <input type="number" id="valHP" placeholder="HP" class="w-full p-2 border rounded mt-1" oninput="convHPtoKW()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery & Dynamic Upload Display -->
+    <section id="gallery" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-navy-900 mb-2">Our Completed Projects</h2>
+            <p class="text-xs text-center text-gray-600 mb-8">පසුගිය ව්‍යාපෘතිවල ඡායාරූප සහ ඉදිකිරීම් තොරතුරු</p>
+
+            <div class="grid md:grid-cols-3 gap-6" id="galleryGrid">
+                <!-- Static Demo Gallery Cards -->
+                <div class="rounded-xl overflow-hidden shadow-md border hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="House Wiring" class="w-full h-48 object-cover">
+                    <div class="p-4 bg-white">
+                        <h4 class="font-bold text-sm">Luxury Residential Wiring</h4>
+                        <p class="text-xs text-gray-500">Mirigama - Completed 2026</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-md border hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600&q=80" alt="DB Board" class="w-full h-48 object-cover">
+                    <div class="p-4 bg-white">
+                        <h4 class="font-bold text-sm">3-Phase Industrial DB Board Installation</h4>
+                        <p class="text-xs text-gray-500">Udawela - Completed 2026</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-md border hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80" alt="Solar" class="w-full h-48 object-cover">
+                    <div class="p-4 bg-white">
+                        <h4 class="font-bold text-sm">Commercial Solar Inverter Wiring</h4>
+                        <p class="text-xs text-gray-500">Kaleliya - Completed 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Data Management Modal -->
+    <div id="adminModal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-lg text-navy-900"><i class="fas fa-user-gear"></i> ABHEE Business Control Panel</h3>
+                <button onclick="toggleAdminPanel()" class="text-red-600 font-bold">X</button>
+            </div>
+
+            <!-- Admin Price Control Settings -->
+            <div class="mb-6 bg-gray-50 p-4 rounded border">
+                <h4 class="font-bold text-xs text-navy-900 mb-2 uppercase">Rate Settings (Labor Rates)</h4>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <label>Light Point Rate (Rs.)</label>
+                        <input type="number" id="admRateLight" class="w-full border p-1 rounded">
+                    </div>
+                    <div>
+                        <label>Plug Point Rate (Rs.)</label>
+                        <input type="number" id="admRatePlug" class="w-full border p-1 rounded">
+                    </div>
+                </div>
+                <button onclick="saveAdminRates()" class="mt-2 bg-navy-900 text-white text-xs px-3 py-1 rounded font-bold">Save Rates</button>
+            </div>
+
+            <!-- Client Uploads Viewer -->
+            <div>
+                <h4 class="font-bold text-xs text-navy-900 mb-2 uppercase">Submitted Customer Plans & Receipts</h4>
+                <div id="adminUploadsList" class="space-y-2 text-xs">
+                    <p class="text-gray-500">No submissions uploaded yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="bg-navy-900 text-white pt-12 pb-6 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 mb-8 text-xs">
+            <div>
+                <h3 class="font-bold text-sm text-electric mb-3">ABHEE ELECTRICAL & CONSTRUCTION</h3>
+                <p class="text-gray-400 mb-2">ඔබගේ විශ්වාසනීය විදුලි සංදේශ සහ ඉදිකිරීම් සහකාරයා.</p>
+                <p class="text-gray-400">88/5D, නැඳුන්ගොල්ල, උඩවෙල, කල්අළිය, මීරිගම.</p>
+                <p class="text-gray-400">Postal Code: 11160</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm text-electric mb-3">Contact Numbers</h3>
+                <p class="mb-1"><i class="fas fa-phone text-electric mr-1"></i> 071 975 7970</p>
+                <p class="mb-1"><i class="fas fa-phone text-electric mr-1"></i> 071 995 0878</p>
+                <p class="mb-1"><i class="fas fa-phone text-electric mr-1"></i> 078 125 5655</p>
+                <p class="mb-1"><i class="fas fa-phone-office text-electric mr-1"></i> 033 227 1557</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm text-electric mb-3">Location Map</h3>
+                <p class="text-gray-400 mb-2">GPS Coordinates: 7°11'34.6"N 80°07'11.3"E</p>
+                <a href="https://maps.google.com/?q=7.192944,80.119806" target="_blank" class="inline-block bg-electric text-navy-900 font-bold px-3 py-1.5 rounded">
+                    <i class="fas fa-map-location-dot"></i> Open Google Maps
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 text-center pt-4 text-xs text-gray-500">
+            &copy; 2026 ABHEE ELECTRICAL & CONSTRUCTION. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic & App Functionality -->
+    <script>
+        // Global Pricing Rates Storage
+        let rates = {
+            light: 1450,
+            plug: 1350,
+            twoway: 2200,
+            master: 8000,
+            earth: 1250,
+            armoredPerM: 950,
+            outdoorMcb: 4500
+        };
+
+        // Customer Submissions Database (In-Memory / LocalStorage)
+        let uploadsDB = [];
+
+        // Dynamic Calculations
+        function calculateLaborQuote() {
+            const numLight = parseInt(document.getElementById('numLight').value) || 0;
+            const numPlug = parseInt(document.getElementById('numPlug').value) || 0;
+            const numTwoWay = parseInt(document.getElementById('numTwoWay').value) || 0;
+            const numMaster = parseInt(document.getElementById('numMaster').value) || 0;
+            const dbPrice = parseInt(document.getElementById('dbRowType').value) || 0;
+            const lenLoadWire = parseInt(document.getElementById('lenLoadWire').value) || 0;
+            const numEarth = parseInt(document.getElementById('numEarth').value) || 0;
+
+            let total = (numLight * rates.light) + (numPlug * rates.plug) + (numTwoWay * rates.twoway) + (numMaster * rates.master) + dbPrice + (numEarth * rates.earth);
+
+            // Tiered load wire calculation
+            if (lenLoadWire > 10) {
+                total += lenLoadWire * 400;
+            } else {
+                total += lenLoadWire * 500;
+            }
+
+            // Meter Wall cutting / Outdoor options
+            const wallMeter = document.querySelector('input[name="wallMeter"]:checked').value;
+            const wallMeterBox = document.getElementById('wallMeterBox');
+            if (wallMeter === 'yes') {
+                wallMeterBox.classList.remove('hidden');
+                const lenArmored = parseInt(document.getElementById('lenArmored').value) || 0;
+                const numOutdoorMcb = parseInt(document.getElementById('numOutdoorMcb').value) || 0;
+                total += (lenArmored * rates.armoredPerM) + (numOutdoorMcb * rates.outdoorMcb);
+            } else {
+                wallMeterBox.classList.add('hidden');
+            }
+
+            document.getElementById('txtTotalCost').innerText = 'Rs. ' + total.toLocaleString('en-US') + '.00';
+            return total;
+        }
+
+        // Section Toggles
+        function toggleWizardSection() {
+            const chkCalc = document.getElementById('chkCalc').checked;
+            const calcSec = document.getElementById('calculatorSection');
+            if (chkCalc) {
+                calcSec.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function togglePlanOptions() {
+            const hasPlan = document.getElementById('chkHasPlan').checked;
+            const noPlan = document.getElementById('chkNoPlan').checked;
+
+            document.getElementById('sectionHasPlan').classList.toggle('hidden', !hasPlan);
+            document.getElementById('sectionNoPlan').classList.toggle('hidden', !noPlan);
+        }
+
+        function toggleSubPlanDetails() {
+            const drawPlan = document.getElementById('subDrawPlan').checked;
+            const noDrawPlan = document.getElementById('subNoDrawPlan').checked;
+
+            document.getElementById('drawPlanBox').classList.toggle('hidden', !drawPlan);
+            document.getElementById('housePlanBox').classList.toggle('hidden', !noDrawPlan);
+        }
+
+        // Upload Handlers
+        function submitPlanUpload() {
+            const file = document.getElementById('fileWiringPlan').files[0];
+            const wa = document.getElementById('planWhatsapp').value;
+            if (!file || !wa) { alert('Please provide file and WhatsApp number!'); return; }
+            saveSubmission('Wiring Plan', file.name, wa);
+        }
+
+        function submitReceiptUpload() {
+            const file = document.getElementById('fileReceipt').files[0];
+            if (!file) { alert('Please choose a receipt file!'); return; }
+            saveSubmission('Bank Receipt (Rs.2000)', file.name, 'Attached');
+        }
+
+        function submitHousePlanUpload() {
+            const file = document.getElementById('fileHousePlan').files[0];
+            const wa = document.getElementById('houseWhatsapp').value;
+            if (!file || !wa) { alert('Please provide file and WhatsApp number!'); return; }
+            saveSubmission('House Architectural Plan', file.name, wa);
+        }
+
+        function saveSubmission(type, fileName, phone) {
+            const entry = { type, fileName, phone, date: new Date().toLocaleString() };
+            uploadsDB.push(entry);
+            renderAdminUploads();
+            alert('තොරතුරු සාර්ථකව යොමු කරන ලදී! (Uploaded Successfully)');
+        }
+
+        function renderAdminUploads() {
+            const list = document.getElementById('adminUploadsList');
+            if (uploadsDB.length === 0) {
+                list.innerHTML = `<p class="text-gray-500">No submissions uploaded yet.</p>`;
+                return;
+            }
+            list.innerHTML = uploadsDB.map(u => `
+                <div class="p-2 border rounded bg-white flex justify-between items-center">
+                    <div>
+                        <span class="font-bold text-blue-800">${u.type}</span> - ${u.fileName}
+                        <div class="text-gray-500 text-[10px]">WA: ${u.phone} | ${u.date}</div>
+                    </div>
+                    <button onclick="alert('Downloading File: ${u.fileName}')" class="bg-gray-800 text-white px-2 py-0.5 rounded text-[10px]">Download</button>
+                </div>
+            `).join('');
+        }
+
+        // Technical Tools Switching
+        function switchTechTool(toolId) {
+            document.querySelectorAll('.tech-tool-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('tool-' + toolId).classList.remove('hidden');
+        }
+
+        // Technical Math Calculations
+        function calcOhm() {
+            let v = parseFloat(document.getElementById('ohmV').value);
+            let i = parseFloat(document.getElementById('ohmI').value);
+            let r = parseFloat(document.getElementById('ohmR').value);
+            let res = document.getElementById('resOhm');
+
+            if (!v && i && r) res.innerText = `Calculated Voltage (V) = ${i * r} V`;
+            else if (v && !i && r) res.innerText = `Calculated Current (I) = ${(v / r).toFixed(2)} A`;
+            else if (v && i && !r) res.innerText = `Calculated Resistance (R) = ${(v / i).toFixed(2)} Ω`;
+            else res.innerText = "Please input any 2 values to calculate the 3rd.";
+        }
+
+        function calcPower() {
+            let v = parseFloat(document.getElementById('pwrV').value) || 0;
+            let i = parseFloat(document.getElementById('pwrI').value) || 0;
+            let pf = parseFloat(document.getElementById('pwrPF').value) || 0.8;
+            let p = v * i * pf;
+            document.getElementById('resPower').innerText = `Calculated Active Power = ${p.toFixed(2)} Watts (${(p/1000).toFixed(2)} kW)`;
+        }
+
+        function calcVDrop() {
+            let L = parseFloat(document.getElementById('vdLen').value) || 0;
+            let I = parseFloat(document.getElementById('vdI').value) || 0;
+            let size = parseFloat(document.getElementById('vdSize').value);
+            // Resistivity approximation
+            let rMap = { 1.5: 12.1, 2.5: 7.41, 4.0: 4.61, 6.0: 3.08, 10.0: 1.83, 16.0: 1.15 };
+            let vdrop = (2 * L * I * (rMap[size] / 1000));
+            document.getElementById('resVDrop').innerText = `Estimated Voltage Drop = ${vdrop.toFixed(2)} V (${((vdrop/230)*100).toFixed(2)}%)`;
+        }
+
+        function convKWtoHP() {
+            let kw = parseFloat(document.getElementById('valKW').value);
+            document.getElementById('valHP').value = (kw * 1.34102).toFixed(2);
+        }
+
+        function convHPtoKW() {
+            let hp = parseFloat(document.getElementById('valHP').value);
+            document.getElementById('valKW').value = (hp * 0.7457).toFixed(2);
+        }
+
+        // WhatsApp Dynamic Message Dispatch
+        function sendWhatsAppQuotation() {
+            const name = document.getElementById('custName').value || 'Customer';
+            const total = calculateLaborQuote();
+            const msg = `*ABHEE ELECTRICAL Quotation Request*%0A` +
+                        `Name: ${name}%0A` +
+                        `Total Estimated Labor: Rs. ${total.toLocaleString()}%0A` +
+                        `Valid for 30 days. Please verify detailed plan.`;
+            window.open(`https://wa.me/94719757970?text=${msg}`, '_blank');
+        }
+
+        // PDF Generation via JS-PDF Library
+        function generatePDFQuotation() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const name = document.getElementById('custName').value || 'Valued Customer';
+            const phone = document.getElementById('custPhone').value || 'N/A';
+            const addr = document.getElementById('custAddr').value || 'N/A';
+            const total = calculateLaborQuote();
+            const qNo = 'ABH-' + Math.floor(100000 + Math.random() * 900000);
+
+            doc.setFillColor(11, 19, 43);
+            doc.rect(0, 0, 210, 40, 'F');
+            doc.setTextColor(247, 184, 1);
+            doc.setFontSize(16);
+            doc.text('ABHEE ELECTRICAL & CONSTRUCTION', 14, 18);
+            doc.setFontSize(9);
+            doc.setTextColor(255, 255, 255);
+            doc.text('Mirigama | Tel: 0719757970 / 0332271557 | Email: abhee.electrical@gmail.com', 14, 26);
+
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(12);
+            doc.text(`OFFICIAL LABOR ESTIMATE QUOTATION`, 14, 50);
+            doc.setFontSize(10);
+            doc.text(`Quotation No: ${qNo}`, 14, 58);
+            doc.text(`Date: ${new Date().toLocaleDateString()}`, 140, 58);
+
+            doc.text(`Customer Name: ${name}`, 14, 70);
+            doc.text(`Phone: ${phone}`, 14, 76);
+            doc.text(`Address: ${addr}`, 14, 82);
+
+            doc.setLineWidth(0.5);
+            doc.line(14, 88, 196, 88);
+
+            doc.text(`Item Description`, 14, 96);
+            doc.text(`Amount (LKR)`, 160, 96);
+            doc.line(14, 100, 196, 100);
+
+            doc.text(`Calculated Labor Charges`, 14, 110);
+            doc.text(`Rs. ${total.toLocaleString()}.00`, 160, 110);
+
+            doc.line(14, 130, 196, 130);
+            doc.setFontSize(12);
+            doc.text(`Total Amount: Rs. ${total.toLocaleString()}.00`, 120, 140);
+
+            doc.setFontSize(9);
+            doc.setTextColor(200, 0, 0);
+            doc.text(`* මෙම මිල ගණන් වලංගු වන්නේ මාසයක කාලයකට පමණි (Valid for 1 Month Only)`, 14, 160);
+            
+            doc.setTextColor(100, 100, 100);
+            doc.text(`Final breaker ratings and cable sizes must be verified by a qualified electrical professional.`, 14, 170);
+
+            doc.save(`${qNo}_ABHEE_Quotation.pdf`);
+        }
+
+        // Admin Modal Logic
+        function toggleAdminPanel() {
+            const modal = document.getElementById('adminModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function saveAdminRates() {
+            const light = parseInt(document.getElementById('admRateLight').value);
+            const plug = parseInt(document.getElementById('admRatePlug').value);
+            if (light) rates.light = light;
+            if (plug) rates.plug = plug;
+            
+            document.querySelectorAll('.rate-light').forEach(el => el.innerText = rates.light);
+            document.querySelectorAll('.rate-plug').forEach(el => el.innerText = rates.plug);
+            calculateLaborQuote();
+            alert('Price Rates Updated Successfully!');
+        }
+    </script>
+</body>
+</html>
